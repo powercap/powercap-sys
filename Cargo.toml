@@ -1,0 +1,17 @@
+[package]
+name = "powercap-sys"
+version = "0.1.0"
+authors = ["Connor Imes <connor.k.imes@gmail.com>"]
+description = "FFI bindings to libpowercap for interacting with the Linux powercap sysfs interface."
+homepage = "https://github.com/powercap/powercap-sys"
+repository = "https://github.com/powercap/powercap-sys"
+readme = "README.md"
+keywords = ["powercap", "rapl", "bindings", "linux", "sysfs"]
+categories = ["external-ffi-bindings", "hardware-support", "os"]
+license = "BSD-3-Clause"
+
+build = "build.rs"
+
+[build-dependencies]
+pkg-config = "0.3.2"
+bindgen = "0.26.3"

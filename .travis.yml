@@ -1,0 +1,30 @@
+os:
+  - linux
+
+language: rust
+
+rust:
+  # No more support for 1.0 in pkg-config build dependency
+  # - 1.0.0
+  - stable
+  - beta
+  - nightly
+
+matrix:
+  allow_failures:
+    - rust: nightly
+
+install:
+  # powercap dependency
+  - git clone https://github.com/powercap/powercap.git
+  - cd powercap
+  - mkdir _build
+  - cd _build
+  - cmake -DCMAKE_POSITION_INDEPENDENT_CODE=True -DCMAKE_INSTALL_PREFIX=_install ..
+  - cmake --build . --target install
+  - cd ../..
+
+script:
+  - export PKG_CONFIG_PATH="$(pwd)/powercap/_build/_install/lib/pkgconfig":"$PKG_CONFIG_PATH"
+  - cargo build --verbose
+  - cargo test --verbose
