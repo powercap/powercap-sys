@@ -19,7 +19,7 @@ Add `powercap-sys` as a dependency in `Cargo.toml`:
 
 ```toml
 [dependencies]
-powercap-sys = "0.1"
+powercap-sys = "0.2"
 ```
 
 

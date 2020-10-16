@@ -1,6 +1,6 @@
 [package]
 name = "powercap-sys"
-version = "0.1.0"
+version = "0.2.0"
 authors = ["Connor Imes <connor.k.imes@gmail.com>"]
 description = "FFI bindings to libpowercap for interacting with the Linux powercap sysfs interface."
 homepage = "https://github.com/powercap/powercap-sys"
