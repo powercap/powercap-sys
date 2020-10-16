@@ -13,5 +13,6 @@ license = "BSD-3-Clause"
 build = "build.rs"
 
 [build-dependencies]
-pkg-config = "0.3.2"
-bindgen = "0.26.3"
+pkg-config = "0.3.19"
+# bindgen 0.55 drops support for libclang 3.8
+bindgen = "0.54.0"
