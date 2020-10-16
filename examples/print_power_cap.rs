@@ -14,10 +14,11 @@ const CONSTRAINT: powercap_rapl_constraint = powercap_rapl_constraint_POWERCAP_R
 
 fn main() {
     // First initialize the context struct
-    let mut pkg: powercap_rapl_pkg = unsafe { mem::uninitialized() };
-    if unsafe { powercap_rapl_init(SOCKET, &mut pkg, READ_ONLY) } != 0 {
+    let mut pkg = mem::MaybeUninit::<powercap_rapl_pkg>::uninit();
+    if unsafe { powercap_rapl_init(SOCKET, pkg.as_mut_ptr(), READ_ONLY) } != 0 {
         panic!("Failed to init powercap")
     }
+    let mut pkg: powercap_rapl_pkg = unsafe { pkg.assume_init() };
     // Read the power cap and print it
     let mut val: u64 = 0;
     match unsafe { powercap_rapl_get_power_limit_uw(&pkg, ZONE, CONSTRAINT, &mut val) } {
