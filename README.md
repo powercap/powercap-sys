@@ -11,7 +11,7 @@ The `powercap` library and headers must be installed where they can be found by 
 In Debian Unstable and Ubuntu Linux >= 18.04, install the `libpowercap-dev` package.
 Otherwise install it from the source (linked above).
 
-Bindings are generated using the Rust [bindgen](https://github.com/rust-lang-nursery/rust-bindgen) crate.
+Bindings are generated using the Rust [bindgen](https://github.com/rust-lang/rust-bindgen) crate.
 
 
 ## Usage
