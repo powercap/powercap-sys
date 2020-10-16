@@ -1,8 +1,6 @@
 extern crate powercap_sys as powercap;
 
 use powercap::*;
-use powercap::powercap_rapl_zone::*;
-use powercap::powercap_rapl_constraint::*;
 use std::mem;
 
 // CPU socket (count starts at 0)
@@ -10,9 +8,9 @@ const SOCKET: u32 = 0;
 // Open as read-only (don't need elevated write permission)
 const READ_ONLY: i32 = 1;
 // Use the RAPL "Package" zone
-const ZONE: powercap_rapl_zone = POWERCAP_RAPL_ZONE_PACKAGE;
+const ZONE: powercap_rapl_zone = powercap_rapl_zone_POWERCAP_RAPL_ZONE_PACKAGE;
 // Use the "long_term" constraint
-const CONSTRAINT: powercap_rapl_constraint = POWERCAP_RAPL_CONSTRAINT_LONG;
+const CONSTRAINT: powercap_rapl_constraint = powercap_rapl_constraint_POWERCAP_RAPL_CONSTRAINT_LONG;
 
 fn main() {
     // First initialize the context struct
