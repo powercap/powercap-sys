@@ -1,6 +1,6 @@
 # Release Notes
 
-## [Unreleased]
+## [v0.2.0] - 2020-10-17
 
 ### Changed
 
@@ -18,5 +18,5 @@
 
 * Initial public release
 
-[Unreleased]: https://github.com/powercap/powercap-sys/compare/v0.1.0...HEAD
+[v0.2.0]: https://github.com/powercap/powercap-sys/compare/v0.1.0...v0.2.0
 [#1]: https://github.com/powercap/powercap-sys/issues/1
